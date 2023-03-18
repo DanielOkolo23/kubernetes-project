@@ -38,25 +38,4 @@ pipeline {
             }
         }
 
-       # stage("Deploy voting-app to EKS") {
-        #    steps {
-         #       script {
-            #        dir('votingapp') {
-             #           sh "kubectl apply -f votingapp.yaml"
-                    }
-                }
-            }
-        }
-
-    #  stage("Deploy ingress rule to EKS") {
-       #     steps {
-           #     script {
-           #         dir('ingress-rule') {
-            #            sh "terraform init"
-             #           sh "terraform apply -auto-approve"
-                    }
-                }
-            }
-        }
-    }
-}
+      
