@@ -28,7 +28,18 @@ pipeline {
                 }
             }
         }
-         stage("Deploy sock-shop to EKS") {
+
+        stage("Deploy voting-app to EKS") {
+            steps {
+                script {
+                    dir('votingapp') {
+                        sh "kubectl apply -f votingapp.yaml"
+                    }
+                }
+            }
+        }
+
+        stage("Deploy sock-shop to EKS") {
             steps {
                 script {
                     dir('sock-shop') {
@@ -38,4 +49,15 @@ pipeline {
             }
         }
 
-      
+        stage("Deploy ingress rule to EKS") {
+            steps {
+                script {
+                    dir('ingress-rule') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
+    }
+}
