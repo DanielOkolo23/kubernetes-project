@@ -28,6 +28,15 @@ pipeline {
                 }
             }
         }
+         stage("Deploy sock-shop to EKS") {
+            steps {
+                script {
+                    dir('sock-shop') {
+                        sh "kubectl apply -f complete-demo.yaml"
+                    }
+                }
+            }
+        }
 
         stage("Deploy voting-app to EKS") {
             steps {
@@ -39,17 +48,7 @@ pipeline {
             }
         }
 
-        stage("Deploy sock-shop to EKS") {
-            steps {
-                script {
-                    dir('sock-shop') {
-                        sh "kubectl apply -f complete-demo.yaml"
-                    }
-                }
-            }
-        }
-
-        stage("Deploy ingress rule to EKS") {
+      stage("Deploy ingress rule to EKS") {
             steps {
                 script {
                     dir('ingress-rule') {
