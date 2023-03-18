@@ -92,10 +92,10 @@ output "eks_cluster_autoscaler_arn" {
   ]
 
   capacity_type  = "ON_DEMAND"
-  instance_types = ["t3.small"]
+  instance_types = ["t3.medium"]
 
   scaling_config {
-    desired_size = 2
+    desired_size = 3
     max_size     = 5
     min_size     = 0
   }
