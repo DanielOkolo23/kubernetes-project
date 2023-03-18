@@ -32,8 +32,8 @@ pipeline {
         stage("Deploy voting-app to EKS") {
             steps {
                 script {
-                    dir('voting-app') {
-                        sh "kubectl apply -f voting-app.yaml"
+                    dir('votingapp') {
+                        sh "kubectl apply -f votingapp.yaml"
                     }
                 }
             }
