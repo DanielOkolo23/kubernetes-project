@@ -16,5 +16,13 @@ pipeline {
                 }
             }
         }
-
+        stage("Deploy sock-shop to EKS") {
+            steps {
+                script {
+                    dir('sock-shop') {
+                        sh "kubectl apply -f complete-demo.yaml"
+                    }
+                }
+            }
+        }
        
