@@ -43,7 +43,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.one.id
 
   route = [
     {
