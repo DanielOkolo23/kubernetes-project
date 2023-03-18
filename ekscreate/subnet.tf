@@ -6,7 +6,7 @@ resource "aws_subnet" "private-eu-west-2a" {
   tags = {
     "Name"                            = "private-eu-west-2a"
     "kubernetes.io/role/internal-elb" = "1"
-    "kubernetes.io/cluster/stevo"      = "owned"
+    "kubernetes.io/cluster/demo"      = "owned"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "private-eu-west-2b" {
   tags = {
     "Name"                            = "private-eu-west-2b"
     "kubernetes.io/role/internal-elb" = "1"
-    "kubernetes.io/cluster/stevo"      = "owned"
+    "kubernetes.io/cluster/demo"      = "owned"
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "public-eu-west-2a" {
   tags = {
     "Name"                       = "public-eu-west-2a"
     "kubernetes.io/role/elb"     = "1"
-    "kubernetes.io/cluster/stevo" = "owned"
+    "kubernetes.io/cluster/demo" = "owned"
   }
 }
 
