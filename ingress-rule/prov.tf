@@ -24,3 +24,4 @@ provider "kubernetes" {
     command     = "aws"
   }
 }
+ 
